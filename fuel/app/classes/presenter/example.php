@@ -11,6 +11,6 @@ class Presenter_example extends Presenter
 	{
 		$this->name = $this->request()
 			->param('name', '臭比');
-		$this->post = \Model_Post::find('all');
+		$this->posts = \Model_Post::find('all');
 	}
 }
