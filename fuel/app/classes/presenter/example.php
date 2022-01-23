@@ -1,6 +1,5 @@
 <?php
 
-use \Model\Post;
 use Fuel\Core\DB;
 
 class Presenter_example extends Presenter
@@ -12,6 +11,6 @@ class Presenter_example extends Presenter
 	{
 		$this->name = $this->request()
 			->param('name', '臭比');
-		$this->post = Post::get_all();
+		$this->post = \Model_Post::find('all');
 	}
 }

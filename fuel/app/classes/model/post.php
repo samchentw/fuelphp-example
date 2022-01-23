@@ -1,30 +1,57 @@
 <?php
 
-
-namespace Model;
-
-use Fuel\Core\DB;
-
-class Post extends \Model
+class Model_Post extends \Orm\Model
 {
+	protected static $_properties = array(
+		"id" => array(
+			"label" => "Id",
+			"data_type" => "int",
+		),
+		"title" => array(
+			"label" => "Title",
+			"data_type" => "varchar",
+		),
+		"body" => array(
+			"label" => "Body",
+			"data_type" => "text",
+		),
+		"created_at" => array(
+			"label" => "Created at",
+			"data_type" => "int",
+		),
+		"updated_at" => array(
+			"label" => "Updated at",
+			"data_type" => "int",
+		),
+	);
 
-    public static function get_all()
-    {
-        // return DB::select('title','body')->from('posts')
-        //     ->execute()->get('title');
-        // return DB::query('SELECT * FROM posts Where id = 1')->execute()->get('body');
-        return DB::query('SELECT * FROM posts')->execute()->as_array();
-    }
+	protected static $_observers = array(
+		'Orm\Observer_CreatedAt' => array(
+			'events' => array('before_insert'),
+			'property' => 'created_at',
+			'mysql_timestamp' => false,
+		),
+		'Orm\Observer_UpdatedAt' => array(
+			'events' => array('before_update'),
+			'property' => 'updated_at',
+			'mysql_timestamp' => false,
+		),
+	);
 
-    public static function insert($title, $body)
-    {
-        $query = DB::insert('posts');
+	protected static $_table_name = 'posts';
 
-        $query->set(array(
-            'title' => $title,
-            'body' => $body,
-        ));
+	protected static $_primary_key = array('id');
 
-        $query->execute();
-    }
+	protected static $_has_many = array(
+	);
+
+	protected static $_many_many = array(
+	);
+
+	protected static $_has_one = array(
+	);
+
+	protected static $_belongs_to = array(
+	);
+
 }

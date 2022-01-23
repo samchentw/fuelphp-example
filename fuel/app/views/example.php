@@ -20,9 +20,11 @@
 					<?php echo $name; ?>
 					<br><br>
 					<?php
-					// echo $post[1]['body'];
+					echo "讀取資料範例：<br><br>";
 					foreach ($post as $p) {
-						echo $p['body'];
+						echo 'ID:'.$p['id'].'<br>';
+						echo 'title:'.$p['title'].'<br>';
+						echo 'body:'.$p['body'].'<br><br>';
 					}
 					?>
 				</h1>

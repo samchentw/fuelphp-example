@@ -81,3 +81,5 @@ $ php oil refine migrate:down
 [controllers](http://wxb.github.io/fuelPHP.zh-CN/general/controllers/base.html)  
 [第三方文件完整說明](http://tw.gitbook.net/fuelphp/fuelphp_quick_guide.html)  
 [Database Query](https://fuelphp.com/docs/classes/database/usage.html#query-results)  
+[Generate](https://fuelphp.com/docs/packages/oil/generate.html)  
+[Config配置](http://wxb.github.io/fuelPHP.zh-CN/general/configuration.html)  

@@ -6,7 +6,7 @@ return array (
     array (
       'default' => 
       array (
-        0 => '001_example',
+        0 => '001_create_posts',
       ),
     ),
     'module' => 
